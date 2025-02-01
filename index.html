@@ -27,10 +27,6 @@
         overflow: hidden;
       }
 
-      canvas {
-        outline: none;
-      }
-
       body {
         display: flex;
         align-items: center;
@@ -278,49 +274,14 @@
         text-align: right;
       }
 
-      .gallery {
-      }
-
-      .gallery-item {
-        margin: 0 10px 10px 0;
-        display: inline-flex;
-        flex-direction: column;
-      }
-
-      .gallery-item:focus-visible {
-        outline: none;
-      }
-
-      .gallery-item:focus-visible .gallery-icon {
-        outline: 2px solid var(--body-color);
-        outline-offset: -2px;
-      }
-
-      .gallery-icon {
-        width: 110px;
-        height: 110px;
-        border-radius: 8px;
-        border: 1px solid var(--body-sub-color);
-        background-color: black;
-        overflow: hidden;
-        transition: outline 0.15s;
-      }
-
-      .gallery-icon.active {
-        outline: 2px solid var(--body-color);
-        outline-offset: -2px;
-      }
-
       footer {
         position: absolute;
-        bottom: 24px;
+        top: 0;
         left: 0;
         z-index: 1;
 
         display: flex;
         flex-direction: row;
-
-        /* padding: 0.6rem 0.6rem; */
         font-size: 0.65em;
         line-height: 1.3;
         letter-spacing: -0.012em;
@@ -331,23 +292,24 @@
         list-style: none;
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 0.65em;
+        align-items: baseline;
       }
 
-      li:first {
+      .nav li:hover button {
+        transition: 0.2s cubic-bezier(0,.18,0,1.01);
+        scale: 1;
+        opacity: 1;
+      }
+
+      .nav li button {
+        padding: 10px;
+        opacity: 0;
+        scale: 0.9;
+        transition: 0.2s cubic-bezier(0,.18,0,1.01);
+      }
+
+      nav li:first {
         margin-left: 0;
-      }
-
-      .nav > li {
-        transform: translateY(-30px);
-        transition: 0.3s;
-      }
-
-      .nav:hover > li {
-        transform: translateY(0);
-        transition: 0.3s;
       }
 
       @media (min-width: 640px) {
@@ -374,10 +336,7 @@
         }
 
         footer {
-          top: 0;
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
+          bottom: 0;
           font-size: 0.75em;
         }
       }</style><script defer="defer" src="index.js"></script></head><body><canvas id="canvas">Sorry! Flux can’t run in your browser because it doesn’t support WebGL2.</canvas><div id="controls"></div></body></html>
